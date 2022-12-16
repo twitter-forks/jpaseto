@@ -18,15 +18,13 @@ package dev.paseto.jpaseto.impl
 import dev.paseto.jpaseto.PasetoParser
 import dev.paseto.jpaseto.Pasetos
 import dev.paseto.jpaseto.lang.Keys
-import org.apache.commons.codec.binary.Hex
-import org.mockito.Mockito
 import org.testng.annotations.Test
 
 import javax.crypto.SecretKey
 import java.security.PublicKey
 
-import static dev.paseto.jpaseto.impl.Util.clockForVectors
-import static dev.paseto.jpaseto.impl.Util.expect
+import static Util.clockForVectors
+import static Util.expect
 import static org.mockito.Mockito.mock
 
 class DefaultPasetoParserTest {

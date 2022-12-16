@@ -17,10 +17,10 @@ package dev.paseto.jpaseto.impl;
 
 import dev.paseto.jpaseto.impl.crypto.JcaV1PublicCryptoProvider;
 import dev.paseto.jpaseto.impl.crypto.JcaV2PublicCryptoProvider;
-import dev.paseto.jpaseto.impl.crypto.V1LocalCryptoProvider;
-import dev.paseto.jpaseto.impl.crypto.V1PublicCryptoProvider;
-import dev.paseto.jpaseto.impl.crypto.V2LocalCryptoProvider;
-import dev.paseto.jpaseto.impl.crypto.V2PublicCryptoProvider;
+import dev.paseto.jpaseto.crypto.V1LocalCryptoProvider;
+import dev.paseto.jpaseto.crypto.V1PublicCryptoProvider;
+import dev.paseto.jpaseto.crypto.V2LocalCryptoProvider;
+import dev.paseto.jpaseto.crypto.V2PublicCryptoProvider;
 import dev.paseto.jpaseto.lang.Services;
 
 final class CryptoProviders {

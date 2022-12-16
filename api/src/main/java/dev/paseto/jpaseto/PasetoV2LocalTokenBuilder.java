@@ -15,8 +15,6 @@
  */
 package dev.paseto.jpaseto;
 
-import javax.crypto.SecretKey;
-
 /**
  * A builder for constructing Paseto v2.local tokens.
  * @since 0.1

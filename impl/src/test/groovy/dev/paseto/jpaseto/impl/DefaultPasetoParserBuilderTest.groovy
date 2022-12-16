@@ -16,6 +16,7 @@
 package dev.paseto.jpaseto.impl
 
 import dev.paseto.jpaseto.*
+import dev.paseto.jpaseto.impl.token.DefaultFooterClaims
 import dev.paseto.jpaseto.io.Deserializer
 import dev.paseto.jpaseto.lang.DescribedPredicate
 import dev.paseto.jpaseto.lang.Keys
@@ -30,7 +31,7 @@ import java.time.Duration
 import java.time.Instant
 import java.time.temporal.ChronoUnit
 
-import static dev.paseto.jpaseto.impl.Util.expect
+import static Util.expect
 import static java.nio.charset.StandardCharsets.UTF_8
 import static org.hamcrest.MatcherAssert.assertThat
 import static org.hamcrest.Matchers.*
@@ -138,8 +139,7 @@ class DefaultPasetoParserBuilderTest {
     void invalidNotBeforeTest() {
         String token = Pasetos.V1.PUBLIC.builder()
             .setPrivateKey(keyPair.getPrivate())
-            .setNotBefore(Instant.now().plus(1, ChronoUnit.HOURS))
-            .compact()
+            .compact(Pasetos.V1.PUBLIC.tokenBuilder().setNotBefore(Instant.now().plus(1, ChronoUnit.HOURS)))
 
         expect PrematurePasetoException, { Pasetos.parserBuilder()
             .setPublicKey(keyPair.getPublic())
@@ -151,8 +151,7 @@ class DefaultPasetoParserBuilderTest {
     void invalidExpireTest() {
         String token = Pasetos.V1.PUBLIC.builder()
             .setPrivateKey(keyPair.getPrivate())
-            .setExpiration(Instant.now().minus(1, ChronoUnit.HOURS))
-            .compact()
+            .compact(Pasetos.V1.PUBLIC.tokenBuilder().setExpiration(Instant.now().minus(1, ChronoUnit.HOURS)))
 
         expect ExpiredPasetoException, { Pasetos.parserBuilder()
             .setPublicKey(keyPair.getPublic())
@@ -165,8 +164,7 @@ class DefaultPasetoParserBuilderTest {
     void requireKeyIdTest() {
         String token = Pasetos.V1.PUBLIC.builder()
             .setPrivateKey(keyPair.getPrivate())
-            .setKeyId("invalid")
-            .compact()
+            .compact(Pasetos.V1.PUBLIC.tokenBuilder().setKeyId("invalid"))
 
         PasetoParser parser = Pasetos.parserBuilder()
             .setPublicKey(keyPair.getPublic())
@@ -185,10 +183,10 @@ class DefaultPasetoParserBuilderTest {
         // start with a token
         String token = Pasetos.V1.PUBLIC.builder()
                 .setPrivateKey(keyPair.getPrivate())
-                .setExpiration(Instant.now().plus(1, ChronoUnit.HOURS))
-                .setSubject("test-sub")
-                .setKeyId("test-kid")
-                .compact()
+                .compact(Pasetos.V1.PUBLIC.tokenBuilder()
+                        .setExpiration(Instant.now().plus(1, ChronoUnit.HOURS))
+                        .setSubject("test-sub")
+                        .setKeyId("test-kid"))
 
         // setup a mock keyResolver
         def keyResolver = mock(KeyResolver)
@@ -210,7 +208,7 @@ class DefaultPasetoParserBuilderTest {
     void missingKeyIdTest() {
         String token = Pasetos.V1.PUBLIC.builder()
             .setPrivateKey(keyPair.getPrivate())
-            .compact()
+            .compact(Pasetos.V1.PUBLIC.tokenBuilder())
 
         PasetoParser parser = Pasetos.parserBuilder()
             .setPublicKey(keyPair.getPublic())
@@ -225,8 +223,8 @@ class DefaultPasetoParserBuilderTest {
     void incorrectClaimTest(String claimName, Object value, Object invalidValue, Closure<PasetoParserBuilder> closure, Matcher<String> exceptionMessageMatcher) {
         String token = Pasetos.V1.PUBLIC.builder()
             .setPrivateKey(keyPair.getPrivate())
-            .claim(claimName, invalidValue)
-            .compact()
+            .compact(Pasetos.V1.PUBLIC.tokenBuilder()
+                    .claim(claimName, invalidValue))
 
         PasetoParserBuilder parserBuilder = Pasetos.parserBuilder()
             .setPublicKey(keyPair.getPublic())
@@ -241,7 +239,7 @@ class DefaultPasetoParserBuilderTest {
     void missingClaimTest(String claimName, Object value, Object invalidValue, Closure<PasetoParserBuilder> closure, Matcher<String> exceptionMessageMatcher) {
         String token = Pasetos.V1.PUBLIC.builder()
             .setPrivateKey(keyPair.getPrivate())
-            .compact()
+            .compact(Pasetos.V1.PUBLIC.tokenBuilder())
 
         PasetoParserBuilder parserBuilder = Pasetos.parserBuilder()
             .setPublicKey(keyPair.getPublic())

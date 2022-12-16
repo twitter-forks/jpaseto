@@ -17,7 +17,7 @@ package dev.paseto.jpaseto.crypto.bouncycastle;
 
 import com.google.auto.service.AutoService;
 import dev.paseto.jpaseto.impl.crypto.JcaV2PublicCryptoProvider;
-import dev.paseto.jpaseto.impl.crypto.V2PublicCryptoProvider;
+import dev.paseto.jpaseto.crypto.V2PublicCryptoProvider;
 
 @AutoService(V2PublicCryptoProvider.class)
 public class BouncyCastleV2PublicCryptoProvider extends JcaV2PublicCryptoProvider {

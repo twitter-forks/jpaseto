@@ -15,18 +15,11 @@
  */
 package dev.paseto.jpaseto.impl;
 
-import java.nio.charset.StandardCharsets;
-import java.util.Base64;
-import java.util.HashMap;
 import java.util.Map;
 
 import dev.paseto.jpaseto.PasetoBuilder;
-import dev.paseto.jpaseto.PasetoTokenBuilder;
-import dev.paseto.jpaseto.impl.lang.Bytes;
 import dev.paseto.jpaseto.io.Serializer;
-import dev.paseto.jpaseto.lang.Collections;
 import dev.paseto.jpaseto.lang.Services;
-import dev.paseto.jpaseto.lang.Strings;
 
 abstract class AbstractPasetoBuilder<T extends PasetoBuilder> implements PasetoBuilder<T> {
     private Serializer<Map<String, Object>> serializer;

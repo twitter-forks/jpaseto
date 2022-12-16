@@ -18,7 +18,6 @@ package dev.paseto.jpaseto;
 import java.util.Map;
 
 import dev.paseto.jpaseto.io.Serializer;
-import dev.paseto.jpaseto.lang.Services;
 
 /**
  * A builder interface for creating paseto tokens.

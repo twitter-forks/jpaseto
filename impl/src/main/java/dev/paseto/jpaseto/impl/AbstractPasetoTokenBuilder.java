@@ -16,7 +16,7 @@
 package dev.paseto.jpaseto.impl;
 
 import dev.paseto.jpaseto.PasetoTokenBuilder;
-import dev.paseto.jpaseto.impl.lang.Bytes;
+import dev.paseto.jpaseto.lang.Bytes;
 import dev.paseto.jpaseto.io.Serializer;
 import dev.paseto.jpaseto.lang.Collections;
 import dev.paseto.jpaseto.lang.Services;

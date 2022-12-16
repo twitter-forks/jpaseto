@@ -97,17 +97,19 @@ class V1PublicFipsIT {
         PasetoV1PublicBuilder builder = Pasetos.V1.PUBLIC.builder()
             .setPrivateKey(privateKey)
 
+        PasetoV1PublicTokenBuilder tokenBuilder = Pasetos.V1.PUBLIC.tokenBuilder()
+
         claims.forEach { key, value ->
-            builder.claim(key, value)
+            tokenBuilder.claim(key, value)
         }
 
         if (footer != null) {
             footer.forEach { key, value ->
-                builder.footerClaim(key, value)
+                tokenBuilder.footerClaim(key, value)
             }
         }
 
-        String token = builder.compact()
+        String token = builder.compact(tokenBuilder)
 
         // parse the token we just created
         Paseto parsedToken = Pasetos.parserBuilder()

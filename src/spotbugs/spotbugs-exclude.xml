@@ -27,14 +27,14 @@
 
     <Match>
         <!-- cipher integrity is added to the message after encryption and checked before decryption (per paseto spec) -->
-        <Class name="dev.paseto.jpaseto.impl.crypto.V1LocalCryptoProvider"/>
+        <Class name="dev.paseto.jpaseto.crypto.V1LocalCryptoProvider"/>
         <Method name="doCipher"/>
         <Bug pattern="CIPHER_INTEGRITY" />
     </Match>
 
     <Match>
         <!-- false positive, the IV is generated from a random string-->
-        <Class name="dev.paseto.jpaseto.impl.crypto.V1LocalCryptoProvider"/>
+        <Class name="dev.paseto.jpaseto.crypto.V1LocalCryptoProvider"/>
         <Method name="doCipher"/>
         <Bug pattern="STATIC_IV" />
     </Match>
