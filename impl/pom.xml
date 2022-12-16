@@ -37,14 +37,20 @@
             <groupId>dev.paseto</groupId>
             <artifactId>jpaseto-api</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>dev.paseto</groupId>
+            <artifactId>jpaseto-impl-token</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>dev.paseto</groupId>
+            <artifactId>jpaseto-impl-crypto</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.google.auto.service</groupId>
             <artifactId>auto-service</artifactId>
             <scope>provided</scope>
             <optional>true</optional>
         </dependency>
-
         <dependency>
             <groupId>dev.paseto</groupId>
             <artifactId>jpaseto-jackson</artifactId>
@@ -59,6 +65,11 @@
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-jdk15on</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>dev.paseto</groupId>
+            <artifactId>jpaseto-bouncy-castle</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>

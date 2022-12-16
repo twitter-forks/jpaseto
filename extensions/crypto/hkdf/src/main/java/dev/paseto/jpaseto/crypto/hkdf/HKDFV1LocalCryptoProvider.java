@@ -19,7 +19,7 @@ import at.favre.lib.crypto.HKDF;
 import at.favre.lib.crypto.HkdfMacFactory;
 import com.google.auto.service.AutoService;
 import dev.paseto.jpaseto.impl.crypto.BaseV1LocalCryptoProvider;
-import dev.paseto.jpaseto.impl.crypto.V1LocalCryptoProvider;
+import dev.paseto.jpaseto.crypto.V1LocalCryptoProvider;
 
 import javax.crypto.SecretKey;
 

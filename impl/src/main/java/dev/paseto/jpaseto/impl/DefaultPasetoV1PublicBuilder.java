@@ -16,8 +16,10 @@
 package dev.paseto.jpaseto.impl;
 
 import com.google.auto.service.AutoService;
+
+import dev.paseto.jpaseto.PasetoTokenBuilder;
 import dev.paseto.jpaseto.PasetoV1PublicBuilder;
-import dev.paseto.jpaseto.impl.crypto.V1PublicCryptoProvider;
+import dev.paseto.jpaseto.crypto.V1PublicCryptoProvider;
 
 import java.security.PrivateKey;
 
@@ -45,13 +47,14 @@ public class DefaultPasetoV1PublicBuilder extends AbstractPasetoBuilder<PasetoV1
     }
 
     @Override
-    public String compact() {
+    public String compact(PasetoTokenBuilder t) {
+        t.setSerializer(this.getSerializer());
 
-        byte[] payload = payloadAsBytes();
-        byte[] footer = footerAsBytes();
+        byte[] payload = t.payloadAsBytes();
+        byte[] footer = t.footerAsBytes();
 
         byte[] signature = cryptoProvider.sign(payload, footer, privateKey);
 
-        return HEADER + noPadBase64(payload, signature) + footerToString(footer);
+        return HEADER + t.noPadBase64(payload, signature) + t.footerToString(footer);
     }
 }

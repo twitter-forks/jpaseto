@@ -17,7 +17,7 @@ package dev.paseto.jpaseto.crypto.bouncycastle;
 
 import com.google.auto.service.AutoService;
 import dev.paseto.jpaseto.impl.crypto.BaseV1LocalCryptoProvider;
-import dev.paseto.jpaseto.impl.crypto.V1LocalCryptoProvider;
+import dev.paseto.jpaseto.crypto.V1LocalCryptoProvider;
 import org.bouncycastle.crypto.generators.HKDFBytesGenerator;
 import org.bouncycastle.crypto.params.HKDFParameters;
 import org.bouncycastle.crypto.util.DigestFactory;

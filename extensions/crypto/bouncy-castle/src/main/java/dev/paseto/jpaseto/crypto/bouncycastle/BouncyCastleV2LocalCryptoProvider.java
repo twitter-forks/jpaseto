@@ -18,8 +18,8 @@ package dev.paseto.jpaseto.crypto.bouncycastle;
 import com.google.auto.service.AutoService;
 import dev.paseto.jpaseto.PasetoSecurityException;
 import dev.paseto.jpaseto.impl.crypto.PreAuthEncoder;
-import dev.paseto.jpaseto.impl.crypto.V2LocalCryptoProvider;
-import dev.paseto.jpaseto.impl.lang.Bytes;
+import dev.paseto.jpaseto.crypto.V2LocalCryptoProvider;
+import dev.paseto.jpaseto.lang.Bytes;
 import org.bouncycastle.crypto.digests.Blake2bDigest;
 
 import javax.crypto.BadPaddingException;

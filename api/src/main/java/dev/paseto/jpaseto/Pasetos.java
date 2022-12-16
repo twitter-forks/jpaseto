@@ -35,6 +35,10 @@ public final class Pasetos {
         public PasetoV2LocalBuilder builder() {
             return Services.loadFirst(PasetoV2LocalBuilder.class);
         }
+
+        public PasetoV2LocalTokenBuilder tokenBuilder() {
+            return Services.loadFirst(PasetoV2LocalTokenBuilder.class);
+        }
     }
 
     public static final class V2Public {
@@ -42,6 +46,10 @@ public final class Pasetos {
 
         public PasetoV2PublicBuilder builder() {
             return Services.loadFirst(PasetoV2PublicBuilder.class);
+        }
+
+        public PasetoV2PublicTokenBuilder tokenBuilder() {
+            return Services.loadFirst(PasetoV2PublicTokenBuilder.class);
         }
     }
 
@@ -51,6 +59,10 @@ public final class Pasetos {
         public PasetoV1LocalBuilder builder() {
             return Services.loadFirst(PasetoV1LocalBuilder.class);
         }
+
+        public PasetoV1LocalTokenBuilder tokenBuilder() {
+            return Services.loadFirst(PasetoV1LocalTokenBuilder.class);
+        }
     }
 
     public static final class V1Public {
@@ -58,6 +70,10 @@ public final class Pasetos {
 
         public PasetoV1PublicBuilder builder() {
             return Services.loadFirst(PasetoV1PublicBuilder.class);
+        }
+
+        public PasetoV1PublicTokenBuilder tokenBuilder() {
+            return Services.loadFirst(PasetoV1PublicTokenBuilder.class);
         }
     }
 
