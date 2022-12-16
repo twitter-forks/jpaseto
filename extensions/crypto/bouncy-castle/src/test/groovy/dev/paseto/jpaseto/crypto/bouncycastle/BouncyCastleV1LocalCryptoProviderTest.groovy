@@ -15,7 +15,7 @@
  */
 package dev.paseto.jpaseto.crypto.bouncycastle
 
-import dev.paseto.jpaseto.impl.crypto.V1LocalCryptoProvider
+import dev.paseto.jpaseto.crypto.V1LocalCryptoProvider
 import dev.paseto.jpaseto.lang.Keys
 import dev.paseto.jpaseto.lang.Services
 import org.testng.annotations.Test

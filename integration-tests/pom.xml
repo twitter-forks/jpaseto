@@ -37,9 +37,16 @@
         </dependency>
         <dependency>
             <groupId>dev.paseto</groupId>
+            <artifactId>jpaseto-impl-crypto</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>dev.paseto</groupId>
+            <artifactId>jpaseto-impl-token</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>dev.paseto</groupId>
             <artifactId>jpaseto-impl</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest</artifactId>
@@ -60,6 +67,16 @@
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-jdk15on</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>dev.paseto</groupId>
+            <artifactId>jpaseto-jackson</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>dev.paseto</groupId>
+            <artifactId>jpaseto-bouncy-castle</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

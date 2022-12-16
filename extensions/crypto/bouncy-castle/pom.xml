@@ -34,7 +34,7 @@
     <dependencies>
         <dependency>
             <groupId>dev.paseto</groupId>
-            <artifactId>jpaseto-impl</artifactId>
+            <artifactId>jpaseto-impl-crypto</artifactId>
         </dependency>
 
         <dependency>
@@ -52,11 +52,6 @@
         <dependency>
             <groupId>dev.paseto</groupId>
             <artifactId>jpaseto-jackson</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>dev.paseto</groupId>
-            <artifactId>jpaseto-its</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>

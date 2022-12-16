@@ -15,8 +15,6 @@
  */
 package dev.paseto.jpaseto;
 
-import java.security.PrivateKey;
-
 /**
  * A builder for constructing Paseto v1.public tokens.
  * @since 0.1

@@ -18,9 +18,8 @@ package dev.paseto.jpaseto.impl;
 import com.google.auto.service.AutoService;
 
 import dev.paseto.jpaseto.PasetoTokenBuilder;
-import dev.paseto.jpaseto.PasetoV1PublicBuilder;
 import dev.paseto.jpaseto.PasetoV2LocalBuilder;
-import dev.paseto.jpaseto.impl.crypto.V2LocalCryptoProvider;
+import dev.paseto.jpaseto.crypto.V2LocalCryptoProvider;
 
 import javax.crypto.SecretKey;
 import java.security.NoSuchAlgorithmException;
